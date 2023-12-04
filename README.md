@@ -15,3 +15,18 @@ printfn "%s" cpfCnpj.Cpf.Value
 This will print "123".
 
 Once you have these instances based on these provided types, you can just call ```cpfCnpj.XElement.ToString()``` and you will have the formatted XML.
+
+You can also deserialize strings to the desired type like this:
+
+```fsharp
+RondonopolisXsd.Parse
+  """
+<CpfCnpj>
+  <Cnpj>123</Cnpj>
+</CpfCnpj>
+  """
+```
+
+The result of the `Parse` method will be an instance of the Root Type according to your `.xsd` file.
+
+Docs on the Xml Type Provider: https://fsprojects.github.io/FSharp.Data/library/XmlProvider.html
